@@ -1,0 +1,24 @@
+{
+    "name": "Rosy",
+    "version": "1.0",
+    "description": "Numbers to sinhala words converter",
+    "permissions": ["storage"],
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "run_at": "document_end",
+        "all_frames": true,
+        "matches": [
+            "http://*/*",
+            "https://*/*",
+            "file://*/*"
+        ],
+        "js":["js/finder.js"]
+    }],
+    "manifest_version": 2,
+    "page_action": {
+        "default_popup": "popup.html"
+    }
+}
