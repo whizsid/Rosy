@@ -2,4 +2,4 @@
 
 ---
 
-Rosy is a chrome extension that translate numeric values to sinhala words. This package will help to peoples like 'Rosy Senanayake'. So I have named this chrome extension as `Rosy`
+Rosy is a chrome extension that translate numeric values to sinhala words. This package will help to persons like 'Rosy Senanayake'. So I have named this chrome extension as `Rosy`
