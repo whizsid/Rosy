@@ -4,7 +4,7 @@
     "description": "Numbers to sinhala words converter",
     "permissions": ["storage"],
     "background": {
-        "scripts": ["js/background.js"],
+        "scripts": ["background.js"],
         "persistent": false
     },
     "content_scripts": [{
@@ -15,7 +15,7 @@
             "https://*/*",
             "file://*/*"
         ],
-        "js":["js/finder.js"]
+        "js": []
     }],
     "manifest_version": 2,
     "page_action": {

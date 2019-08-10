@@ -1,0 +1,49 @@
+{
+  "name": "rosy",
+  "version": "1.0.0",
+  "description": "A chrome extension to translate numerical values to sinhala words.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whizsid/Rosy.git"
+  },
+  "keywords": [
+    "chrome",
+    "numbers",
+    "sinhala",
+    "words",
+    "translate",
+    "unicode",
+    "mouseover",
+    "tooltip",
+    "convert",
+    "numeric"
+  ],
+  "author": "whizsid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/whizsid/Rosy/issues"
+  },
+  "homepage": "https://github.com/whizsid/Rosy#readme",
+  "scripts": {
+    "build": "NODE_ENV=production webpack && zip -FS -r -j rosy dist",
+    "dev": "webpack --watch",
+    "lint": "eslint --ignore-pattern dist ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-classes": "^7.4.4",
+    "@types/chrome": "0.0.88",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "eslint": "^5.11.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "tslint-config-prettier": "^1.18.0"
+  }
+}
