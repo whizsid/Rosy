@@ -1,6 +1,10 @@
 import { RosyNumber, RosyPosition } from "./types";
 
 export const positions:{[x:number]:RosyPosition} = {
+	1:{
+		noun:'dahaya',
+		powerOfTen:1,
+		prefix:'dasa'
 	2:{
 		noun:'siyaya',
 		powerOfTen:2,

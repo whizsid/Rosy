@@ -9,7 +9,8 @@ const config = {
   devtool: "inline-source-map",
   mode,
   entry: {
-    background: "./src/ts/background.ts"
+    background: "./src/ts/background.ts",
+    content: "./src/ts/content.ts"
   },
   output: {
     filename: "[name].js",
