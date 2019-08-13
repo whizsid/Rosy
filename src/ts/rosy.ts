@@ -15,6 +15,7 @@ const Rosy =  (translateMe:number,lastPrefix:boolean=false):string=>{
 		const divided=Math.ceil(translateMe/powers[lastModedIndex]);
 		const moded = translateMe%powers[lastModedIndex];
 
+		const prefix = lastPrefix? true :  moded<=0;
 		translateMe = moded;
 
 		if(divided>99){
@@ -24,14 +25,28 @@ const Rosy =  (translateMe:number,lastPrefix:boolean=false):string=>{
 			const dividedByTen = Math.ceil(divided/10);
 			const modedByTen = divided%10;
 			
-			translated += numbers[dividedByTen].productTenPrefix
-				+ numbers[modedByTen].productTenPrefix;
+			translated += numbers[dividedByTen].productTenPrefix;
+
+			if(prefix){
+				translated += numbers[modedByTen].productTenPrefix;				
+			} else {
+				translated += numbers[modedByTen].productTenNoun;
+			}
 		} else if (divided>9) {
 			const modedByTen = divided%10;
 
-			translated += numbers[modedByTen].productTenPrefix;
+			if(prefix) {
+				translated += numbers[modedByTen].plusTenPrefix;
+			} else {
+				translated += numbers[modedByTen].plusTenNoun;
+			}
+
 		} else {
-			translated += numbers[divided].prefix;
+			if(prefix){
+				translated += numbers[divided].prefix;
+			} else {
+				translated += numbers[divided].noun;
+			}
 		}
 
 		translated += position.prefix;
