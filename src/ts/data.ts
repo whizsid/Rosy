@@ -1,127 +1,137 @@
 import { RosyNumber, RosyPosition } from "./types";
 
 export const positions:{[x:number]:RosyPosition} = {
-	1:{
-		noun:'dahaya',
-		powerOfTen:1,
-		prefix:'dasa'
+	0:{
+		noun: '',
+		powerOfTen:0,
+		prefix: ''
+	},
 	2:{
-		noun:'siyaya',
+		noun:'සියය',
 		powerOfTen:2,
-		prefix:'siya'
+		prefix:'සිය'
 	},
 	3:{
-		noun:'dahasa',
+		noun:'දහස',
 		powerOfTen:3,
-		prefix: 'dahas'
+		prefix: 'දහස්'
 	},
 	5:{
-		noun: 'lakshaya',
+		noun: 'ලක්ෂය',
 		powerOfTen:5,
-		prefix: 'laksha'
+		prefix: 'ලක්ෂ'
 	},
 	6:{
-		noun:'miliyanaya',
+		noun:'මිලියනය',
 		powerOfTen:6,
-		prefix: 'miliyana'
+		prefix: 'මිලියන'
 	},
 	7:{
-		noun:'kotiya',
+		noun:'කෝටිය',
 		powerOfTen:7,
-		prefix:'koti'
+		prefix:'කෝටි'
 	},
 	9:{
-		noun:'biliyanaya',
+		noun:'බිලියනය',
 		powerOfTen: 9,
-		prefix: 'biliyana'
+		prefix: 'බිලියන'
 	},
 	12: {
-		noun: 'triliyanaya',
+		noun: 'ත්‍රිලියනය',
 		powerOfTen: 12,
-		prefix:'triliyana'
+		prefix:'ත්‍රිලියන'
 	}
 }
 
 export const numbers:{[x:number]:RosyNumber} = {
+	0:{
+		noun:'binduwa',
+		number:0,
+		plusTenNoun:'දහය',
+		plusTenPrefix:'දස',
+		prefix:'',
+		productTenNoun: 'binduwa',
+		productTenPrefix: ''
+	},
 	1:{
-		noun:'eka',
+		noun:'එක',
 		number:1,
-		plusTenNoun:'ekolaha',
-		plusTenPrefix:'ekolos',
-		prefix:'ek',
-		productTenNoun: 'dahaya',
-		productTenPrefix: 'dasa'
+		plusTenNoun:'එකොළහ',
+		plusTenPrefix:'එකොළොස්',
+		prefix:'එක්',
+		productTenNoun: 'දහය',
+		productTenPrefix: 'දස'
 	},
 	2:{
-		noun:'deka',
+		noun:'දෙක',
 		number:2,
-		plusTenNoun:'dolaha',
-		plusTenPrefix:'dolos',
+		plusTenNoun:'දොළහ',
+		plusTenPrefix:'දොළොස්',
 		prefix:'de',
-		productTenNoun:'wissa',
-		productTenPrefix:'wisi'
+		productTenNoun:'විස්ස',
+		productTenPrefix:'විසි'
 	},
 	3:{
-		noun:'thuna',
+		noun:'තුන',
 		number:3,
-		plusTenNoun:'dahathuna',
-		plusTenPrefix:'dahathun',
-		prefix:'thun',
-		productTenNoun: 'thiha',
-		productTenPrefix: 'this'
+		plusTenNoun:'දහතුන',
+		plusTenPrefix:'දහතුන්',
+		prefix:'තුන්',
+		productTenNoun: 'තිහ',
+		productTenPrefix: 'තිස්'
 	},
 	4:{
-		noun: 'hathara',
+		noun: 'හතර',
 		number: 4,
-		plusTenNoun: 'dahahathara',
-		plusTenPrefix:'dahahathara',
-		prefix:'hara',
-		productTenNoun: 'hathaliha',
-		productTenPrefix: 'hathalis'
+		plusTenNoun: 'දහ හතර',
+		plusTenPrefix:'දහ හතර',
+		prefix:'හාර',
+		productTenNoun: 'හතළිහ',
+		productTenPrefix: 'හතළිස්'
 	},
 	5:{
-		noun: 'paha',
+		noun: 'පහ',
 		number: 5,
-		plusTenNoun: 'pahalowa',
-		plusTenPrefix: 'pahalos',
-		prefix:'pan',
-		productTenNoun: 'panaha',
-		productTenPrefix: 'panas'
+		plusTenNoun: 'පහළොව',
+		plusTenPrefix: 'පහළොස්',
+		prefix:'පන්',
+		productTenNoun: 'පනහ',
+		productTenPrefix: 'පනස්'
 	},
 	6:{
-		noun: 'haya',
+		noun: 'හය',
 		number: 6,
-		plusTenNoun:'dahasaya',
-		plusTenPrefix: 'dahasaya',
-		prefix: 'haya',
-		productTenNoun: 'hata',
-		productTenPrefix: 'hata'
+		plusTenNoun:'දහසය',
+		plusTenPrefix: 'දහසය',
+		prefix: 'හය',
+		productTenNoun: 'හැට',
+		productTenPrefix: 'හැට'
 	},
 	7: {
-		noun: 'hatha',
+		noun: 'හත',
 		number: 7,
-		plusTenNoun: 'dahahatha',
-		plusTenPrefix: 'dahahath',
-		prefix: 'hath',
-		productTenNoun: 'haththawa',
-		productTenPrefix: 'haththa'
+		plusTenNoun: 'දහ හත',
+		plusTenPrefix: 'දහ හත්',
+		prefix: 'හත්',
+		productTenNoun: 'හැත්තෑව',
+		productTenPrefix: 'හැත්තෑ'
 	},
 	8: {
-		noun: 'ata',
+		noun: 'අට',
 		number: 8,
-		plusTenNoun: 'dahaata',
-		plusTenPrefix: 'dahaata',
-		prefix: 'ata',
-		productTenNoun: 'asuwa',
-		productTenPrefix: 'asu'
+		plusTenNoun: 'දහ අට',
+		plusTenPrefix: 'දහ අට',
+		prefix: 'අට',
+		productTenNoun: 'අසූව',
+		productTenPrefix: 'අසූ'
 	},
 	9: {
-		noun: 'nawaya',
+		noun: 'නවය',
 		number: 9,
-		plusTenNoun: 'dahanawaya',
-		plusTenPrefix: 'dahanawa',
-		prefix: 'nawa',
-		productTenNoun: 'anuwa',
-		productTenPrefix: 'anu'
+		plusTenNoun: 'දහ නවය',
+		plusTenPrefix: 'දහ නව',
+		prefix: 'නව',
+		productTenNoun: 'අනූව',
+		productTenPrefix: 'අනූ'
 	}
 }

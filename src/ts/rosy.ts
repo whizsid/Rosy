@@ -4,53 +4,73 @@ const Rosy =  (translateMe:number,lastPrefix:boolean=false):string=>{
 
 	let translated:string ="";
 
-	const powers= Object.keys(positions)
+	const powers:number[]= Object.keys(positions)
+		// tslint:disable-next-line: radix
+		.map((a:string):number=>parseInt(a))
 		.sort((a:number,b:number)=>b-a);
 
 	let lastModedIndex:number=0;
 
 	while(translateMe>0){
+		const position = positions[powers[lastModedIndex]];
+		
+		const divided=Math.floor(translateMe/Math.pow(10,position.powerOfTen));
+		const moded:number = translateMe % Math.pow(10,position.powerOfTen);
 
-		const position = positions[lastModedIndex];
-		const divided=Math.ceil(translateMe/powers[lastModedIndex]);
-		const moded = translateMe%powers[lastModedIndex];
-
-		const prefix = lastPrefix? true :  moded<=0;
+		const prefix = lastPrefix? true :  moded!==0||position.powerOfTen!==0;
 		translateMe = moded;
+
 
 		if(divided>99){
 			translated += Rosy(divided,true);
-		) else if(divided>19){
-		
-			const dividedByTen = Math.ceil(divided/10);
-			const modedByTen = divided%10;
+		} else if(divided>19){
 			
-			translated += numbers[dividedByTen].productTenPrefix;
+			const dividedByTen = Math.floor(divided/10);
+			const modedByTen = divided%10;
 
-			if(prefix){
-				translated += numbers[modedByTen].productTenPrefix;				
+			if(modedByTen>1){
+				translated += numbers[dividedByTen].productTenPrefix+' ';
 			} else {
-				translated += numbers[modedByTen].productTenNoun;
+				if(prefix){
+					translated += numbers[dividedByTen].productTenPrefix+' ';
+				} else {
+					translated += numbers[dividedByTen].productTenNoun;
+				}
+			}
+
+			if(modedByTen>1){
+				if(prefix){
+					translated += numbers[modedByTen].prefix+' ';				
+				} else {
+					translated += numbers[modedByTen].noun;
+				}
 			}
 		} else if (divided>9) {
 			const modedByTen = divided%10;
 
 			if(prefix) {
-				translated += numbers[modedByTen].plusTenPrefix;
+				translated += numbers[modedByTen].plusTenPrefix+' ';
 			} else {
 				translated += numbers[modedByTen].plusTenNoun;
 			}
 
-		} else {
+		} else if(divided>0) {
+
 			if(prefix){
-				translated += numbers[divided].prefix;
+				translated += numbers[divided].prefix+' ';
 			} else {
 				translated += numbers[divided].noun;
 			}
+
 		}
 
-		translated += position.prefix;
-
+		if(divided>0){
+			if(moded>0){
+				translated += position.prefix+' ';
+			} else {
+				translated += position.noun;
+			}
+		}
 		lastModedIndex++;
 	}
 
