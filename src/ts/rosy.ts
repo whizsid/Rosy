@@ -54,7 +54,7 @@ const Rosy =  (translateMe:number,lastPrefix:boolean=false):string=>{
 				translated += numbers[modedByTen].plusTenNoun;
 			}
 
-		} else if(divided>0) {
+		} else if(divided>0&&!(divided===1&&position.powerOfTen!=0 &&moded===0&&translated==='')) {
 
 			if(prefix){
 				translated += numbers[divided].prefix+' ';
