@@ -10,7 +10,8 @@ const config = {
   mode,
   entry: {
     background: "./src/ts/background.ts",
-    content: "./src/ts/content.ts"
+    content: "./src/ts/content.ts",
+    popup: "./src/ts/popup.ts",
   },
   output: {
     filename: "[name].js",
@@ -40,7 +41,14 @@ const config = {
   },
   plugins: [
     new CleanWebpackPlugin(["dist"]),
-    new CopyWebpackPlugin(["src/manifest.json", "src/icons/*.png"], {
+    new CopyWebpackPlugin([
+      "src/manifest.json",
+      "src/icons/*.png",
+      "src/html/popup.html",
+      "src/css/popup.css",
+      "src/js/buttons.js",
+      "logo/square.png"
+    ], {
       to: "dist"
     })
   ]

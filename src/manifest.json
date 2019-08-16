@@ -16,11 +16,11 @@
             "file://*/*"
         ],
         "js": [
-	    "content.js"
-	]
+            "content.js"
+        ]
     }],
     "manifest_version": 2,
-    "page_action": {
+    "browser_action": {
         "default_popup": "popup.html"
     }
 }

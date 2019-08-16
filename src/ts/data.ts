@@ -45,12 +45,12 @@ export const positions:{[x:number]:RosyPosition} = {
 
 export const numbers:{[x:number]:RosyNumber} = {
 	0:{
-		noun:'binduwa',
+		noun:'බිංදුව',
 		number:0,
 		plusTenNoun:'දහය',
 		plusTenPrefix:'දස',
 		prefix:'',
-		productTenNoun: 'binduwa',
+		productTenNoun: 'බිංදුව',
 		productTenPrefix: ''
 	},
 	1:{
@@ -67,7 +67,7 @@ export const numbers:{[x:number]:RosyNumber} = {
 		number:2,
 		plusTenNoun:'දොළහ',
 		plusTenPrefix:'දොළොස්',
-		prefix:'de',
+		prefix:'දෙ',
 		productTenNoun:'විස්ස',
 		productTenPrefix:'විසි'
 	},

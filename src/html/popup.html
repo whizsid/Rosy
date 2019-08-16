@@ -1,0 +1,63 @@
+<html>
+
+<head>
+  <title>Rosy Popup</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Place this tag where you want the button to render. -->
+    <div class="gh-button">
+      <a class="github-button" href="https://github.com/whizsid/Rosy" data-icon="octicon-star" data-show-count="true"
+        aria-label="Star whizsid/Rosy on GitHub">Star</a>
+    </div>
+    <table border="0">
+      <tr>
+        <td rowspan="5">
+          <img width="160" height="160" src='./square.png' id='beautiofrosy'>
+        </td>
+        <td>
+          <h4>Rosy</h4>
+          <hr />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="quickInput">
+            Quick Translate:-
+            <input type="number" id="quickInput" placeholder="I can translate any number..." />
+          </label>
+        </td>
+      </tr>
+      <tr style="display: none" id="quickRow">
+        <td>
+          <label for="quickResult">
+            Quick Result:-
+            <b id="quickResult">
+            </b>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <label>Auto translate:-</label>
+          <div class="button-switch">
+            <input type="checkbox" id="switch-blue" class="switch" checked />
+            <label for="switch-blue" class="lbl-off"></label>
+            <label for="switch-blue" class="lbl-on"></label>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="popup.js"></script>
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="buttons.js"></script>
+</body>
+
+</html>
