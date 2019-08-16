@@ -28,7 +28,7 @@ const Rosy =  (translateMe:number,lastPrefix:boolean=false):string=>{
 			const dividedByTen = Math.floor(divided/10);
 			const modedByTen = divided%10;
 
-			if(modedByTen>1){
+			if(modedByTen>=1){
 				translated += numbers[dividedByTen].productTenPrefix+' ';
 			} else {
 				if(prefix){
@@ -38,7 +38,7 @@ const Rosy =  (translateMe:number,lastPrefix:boolean=false):string=>{
 				}
 			}
 
-			if(modedByTen>1){
+			if(modedByTen>=1){
 				if(prefix){
 					translated += numbers[modedByTen].prefix+' ';				
 				} else {
