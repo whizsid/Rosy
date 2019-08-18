@@ -84,6 +84,8 @@ const pattern = /(\d+)/g;
 
 const tooltip = new Tooltip();
 
+let timeout:number = 0;
+
 for (const tag of tags) {
   const elmnts = document.getElementsByTagName(tag) as HTMLCollectionOf<
     HTMLElement
@@ -128,10 +130,12 @@ for (const tag of tags) {
                   // tslint:disable-next-line: radix
                   tooltip.changeContent(Rosy(parseInt(hoveredWord.word)));
                   tooltip.show();
-                  console.log(hoveredWord.word);
+                  window.clearTimeout(timeout);
+
+                  timeout = window.setTimeout(()=>{
+                    tooltip.hide();
+                  },2000)
                 }
-              } else {
-                tooltip.hide();
               }
             }
           }

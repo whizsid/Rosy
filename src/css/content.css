@@ -1,6 +1,10 @@
-rosy-tooltip {
+.rosy-tooltip {
     position: absolute;
     background: #404040;
     color:#fff;
     transition-delay: .6s;
+    margin-bottom: 40px;
+    margin-left:40px;
+    padding:8px;
+    border-radius: 2px;
 }
