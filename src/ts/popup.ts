@@ -23,24 +23,30 @@ if (inputElement) {
 }
 
 const switchButton = document.getElementById("switch-blue") as HTMLInputElement;
+chrome.storage.sync.get(
+  ["rosyEnabled"],
+  ({ rosyEnabled }: { rosyEnabled?: string }) => {
+    // tslint:disable-next-line: radix
+    let enabled = parseInt(rosyEnabled);
 
-// tslint:disable-next-line: radix
-let enabled = parseInt(localStorage.getItem("rosy_enabled"));
+    if (enabled) {
+      switchButton.checked = true;
+    } else {
+      switchButton.checked = false;
+    }
 
-if (enabled) {
-  switchButton.checked = true;
-} else {
-  switchButton.checked = false;
-}
+    switchButton.addEventListener("change", function(this) {
+      enabled = enabled ? 0 : 1;
 
-switchButton.addEventListener("change", function(this) {
-  enabled = enabled ? 0 : 1;
-
-  if (enabled) {
-    localStorage.setItem("rosy_enabled", "1");
-    switchButton.checked = true;
-  } else {
-    localStorage.setItem("rosy_enabled", "0");
-    switchButton.checked = false;
+      if (enabled) {
+        chrome.storage.sync.set({ rosyEnabled: "1" }, () => {
+          switchButton.checked = true;
+        });
+      } else {
+        chrome.storage.sync.set({ rosyEnabled: "0" }, () => {
+          switchButton.checked = false;
+        });
+      }
+    });
   }
-});
+);

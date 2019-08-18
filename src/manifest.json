@@ -17,6 +17,9 @@
         ],
         "js": [
             "content.js"
+        ],
+        "css":[
+            "content.css"
         ]
     }],
     "manifest_version": 2,

@@ -46,6 +46,7 @@ const config = {
       "src/icons/*.png",
       "src/html/popup.html",
       "src/css/popup.css",
+      "src/css/content.css",
       "src/js/buttons.js",
       "logo/square.png"
     ], {
