@@ -4,10 +4,6 @@
     "description": "Numbers to sinhala words converter",
     "permissions": ["storage"],
     "short_name":"Rosy",
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
     "content_scripts": [{
         "run_at": "document_end",
         "all_frames": true,
@@ -24,16 +20,16 @@
         ]
     }],
     "icons": {
-        "16": "src/icons/icon16.png",
-        "48": "src/icons/icon48.png",
-        "128": "src/icons/icon128.png"
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
     },
     "manifest_version": 2,
     "browser_action": {
         "default_icon": {
-            "16": "src/icons/icon16.png",
-            "24": "src/icons/icon24.png",
-            "32": "src/icons/icon32.png"
+            "16": "icon16.png",
+            "24": "icon24.png",
+            "32": "icon32.png"
         },
         "default_title": "Translate your numbers to sinhala with Rosy.",
         "default_popup": "popup.html"

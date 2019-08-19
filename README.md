@@ -10,7 +10,7 @@
 
 > Don't tell lies. Rosy can translate any long number to sinhala.
 
-Rosy is a chrome extension to helping persons to translate their numerical values to sinhala words. It will automatically translating numeric values in webpages and display the result in a cool tooltip box. You can also translate your own numbers with the help of simple popup.
+Rosy is a firefox addon to helping persons to translate their numerical values to sinhala words. It will automatically translating numeric values in webpages and display the result in a cool tooltip box. You can also translate your own numbers with the help of simple popup.
 
 ![Rosy preview](https://i.imgur.com/JR0hBuJ.png)
 

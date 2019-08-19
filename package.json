@@ -1,14 +1,14 @@
 {
   "name": "rosy",
   "version": "1.0.0",
-  "description": "A chrome extension to translate numerical values to sinhala words.",
+  "description": "A firefox extension to translate numerical values to sinhala words.",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/whizsid/Rosy.git"
   },
   "keywords": [
-    "chrome",
+    "firefox",
     "numbers",
     "sinhala",
     "words",
@@ -33,13 +33,13 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/plugin-transform-classes": "^7.4.4",
-    "@types/chrome": "0.0.88",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "eslint": "^5.11.0",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
+    "webextension-polyfill-ts": "^0.9.1",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2"
   },

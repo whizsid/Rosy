@@ -1,3 +1,4 @@
+import { browser } from "webextension-polyfill-ts";
 import Rosy from "./rosy";
 import Tooltip from "./tooltip";
 
@@ -90,7 +91,7 @@ const tags: string[] = [
   "title"
 ];
 
-const pattern = /\b([0-9\,\)\(]+[0-9]+[0-9\,\)\(]+)\b/;
+const pattern = /^([0-9\,\)\(]+[0-9]+[0-9\,\)\(]+)$/;
 
 const tooltip = new Tooltip();
 
@@ -115,18 +116,18 @@ for (const tag of tags) {
         this: Element,
         e: MouseEvent
       ) {
-        chrome.storage.sync.get(
-          ["rosyEnabled"],
-          ({ rosyEnabled }: { rosyEnabled?: string }) => {
+
+        browser.storage.local
+          .get(["rosyEnabled"])
+          .then(({ rosyEnabled }: { rosyEnabled?: string }) => {
             // tslint:disable-next-line: radix
             if (parseInt(rosyEnabled)) {
               let hoveredWord: IFoundWord | null = null;
 
-              const x:number = e.pageX;
-              const y:number = e.pageY;
+              const x: number = e.pageX;
+              const y: number = e.pageY;
 
               tooltip.move(x, y);
-
 
               for (const textNode of textNodes) {
                 if (!hoveredWord) {
@@ -139,21 +140,21 @@ for (const tag of tags) {
               }
 
               if (hoveredWord) {
-
                 if (pattern.test(hoveredWord.word)) {
-                  // tslint:disable-next-line: radix
-                  tooltip.changeContent(Rosy(parseInt(hoveredWord.word.replace(/([^0-9]+)/g,''))));
+                  tooltip.changeContent(
+                    // tslint:disable-next-line: radix
+                    Rosy(parseInt(hoveredWord.word.replace(/([^0-9]+)/g, "")))
+                  );
                   tooltip.show();
                 }
               }
             }
-          }
-        );
+          });
       });
 
-      elmnt.addEventListener('mouseleave',()=>{
+      elmnt.addEventListener("mouseleave", () => {
         tooltip.hide();
-      })
+      });
     }
   }
 }

@@ -1,3 +1,4 @@
+import { browser } from "webextension-polyfill-ts";
 import Rosy from "./rosy";
 
 const inputElement = document.getElementById("quickInput") as HTMLInputElement;
@@ -23,9 +24,9 @@ if (inputElement) {
 }
 
 const switchButton = document.getElementById("switch-blue") as HTMLInputElement;
-chrome.storage.sync.get(
-  ["rosyEnabled"],
-  ({ rosyEnabled }: { rosyEnabled?: string }) => {
+browser.storage.local
+  .get(["rosyEnabled"])
+  .then(({ rosyEnabled }: { rosyEnabled?: string }) => {
     // tslint:disable-next-line: radix
     let enabled = parseInt(rosyEnabled);
 
@@ -39,14 +40,13 @@ chrome.storage.sync.get(
       enabled = enabled ? 0 : 1;
 
       if (enabled) {
-        chrome.storage.sync.set({ rosyEnabled: "1" }, () => {
+        browser.storage.local.set({ rosyEnabled: "1" }).then(() => {
           switchButton.checked = true;
         });
       } else {
-        chrome.storage.sync.set({ rosyEnabled: "0" }, () => {
+        browser.storage.local.set({ rosyEnabled: "0" }).then(() => {
           switchButton.checked = false;
         });
       }
     });
-  }
-);
+  });
