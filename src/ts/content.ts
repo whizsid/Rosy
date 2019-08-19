@@ -90,7 +90,7 @@ const tags: string[] = [
   "title"
 ];
 
-const pattern = /([0-9\,\)\(\-]+)/g;
+const pattern = /([0-9\,\)\(]+)/g;
 
 const tooltip = new Tooltip();
 
