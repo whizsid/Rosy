@@ -77,7 +77,18 @@ const tags: string[] = [
   "span",
   "em",
   "div",
-  "strong"
+  "strong",
+  "td",
+  "th",
+  "li",
+  "code",
+  "q",
+  "s",
+  "pre",
+  "small",
+  "textarea",
+  "title",
+  
 ];
 
 const pattern = /(\d+)/g;
