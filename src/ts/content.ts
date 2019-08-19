@@ -87,15 +87,12 @@ const tags: string[] = [
   "pre",
   "small",
   "textarea",
-  "title",
-  
+  "title"
 ];
 
-const pattern = /(\d+)/g;
+const pattern = /([0-9\,\)\(\-]+)/g;
 
 const tooltip = new Tooltip();
-
-let timeout:number = 0;
 
 for (const tag of tags) {
   const elmnts = document.getElementsByTagName(tag) as HTMLCollectionOf<
@@ -144,19 +141,18 @@ for (const tag of tags) {
               if (hoveredWord) {
                 if (pattern.test(hoveredWord.word)) {
                   // tslint:disable-next-line: radix
-                  tooltip.changeContent(Rosy(parseInt(hoveredWord.word)));
+                  tooltip.changeContent(Rosy(parseInt(hoveredWord.word.replace(/([^0-9]+)/g,''))));
                   tooltip.show();
-                  window.clearTimeout(timeout);
-
-                  timeout = window.setTimeout(()=>{
-                    tooltip.hide();
-                  },2000)
                 }
               }
             }
           }
         );
       });
+
+      elmnt.addEventListener('mouseleave',()=>{
+        tooltip.hide();
+      })
     }
   }
 }
