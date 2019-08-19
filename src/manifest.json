@@ -1,8 +1,9 @@
 {
-    "name": "Rosy",
+    "name": "Rosy Number Translator",
     "version": "1.0",
     "description": "Numbers to sinhala words converter",
     "permissions": ["storage"],
+    "short_name":"Rosy",
     "background": {
         "scripts": ["background.js"],
         "persistent": false
