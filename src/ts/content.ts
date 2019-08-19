@@ -114,6 +114,12 @@ for (const tag of tags) {
             if (parseInt(rosyEnabled)) {
               let hoveredWord: IFoundWord | null = null;
 
+              const x:number = e.pageX;
+              const y:number = e.pageY;
+
+              tooltip.move(x, y);
+
+
               for (const textNode of textNodes) {
                 if (!hoveredWord) {
                   hoveredWord = getWordByCoordinates(
@@ -126,7 +132,6 @@ for (const tag of tags) {
 
               if (hoveredWord) {
                 if (pattern.test(hoveredWord.word)) {
-                  tooltip.move(hoveredWord.rect.left, hoveredWord.rect.top);
                   // tslint:disable-next-line: radix
                   tooltip.changeContent(Rosy(parseInt(hoveredWord.word)));
                   tooltip.show();

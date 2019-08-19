@@ -26,6 +26,7 @@ class Tooltip {
     public move(x:number,y:number):void{
         this.left = x;
         this.top = y;
+        this.render();
     }
 
     public changeContent(content:string):void{
