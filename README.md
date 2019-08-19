@@ -2,4 +2,22 @@
 
 ---
 
-Rosy is a chrome extension that translate numeric values to sinhala words. This package will help to persons like 'Rosy Senanayake'. So I have named this chrome extension as `Rosy`
+<p align="center">
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License: MIT"></a>
+</p>
+
+---
+
+> Don't tell lies. Rosy can translate any long number to sinhala.
+
+Rosy is a chrome extension to helping persons to translate their numerical values to sinhala words. It will automatically translating numeric values in webpages and display the result in a cool tooltip box. You can also translate your own numbers with the help of simple popup.
+
+![Rosy preview](https://i.imgur.com/JR0hBuJ.png)
+
+## License
+
+You can copy any codes/algorythm from this repository and give credits when copying.
+
+## Contribution
+
+All PRs and issues are welcome.

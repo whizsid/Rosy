@@ -90,7 +90,7 @@ const tags: string[] = [
   "title"
 ];
 
-const pattern = /([0-9\,\)\(]+)/g;
+const pattern = /\b([0-9\,\)\(]+[0-9]+[0-9\,\)\(]+)\b/;
 
 const tooltip = new Tooltip();
 
@@ -139,6 +139,7 @@ for (const tag of tags) {
               }
 
               if (hoveredWord) {
+
                 if (pattern.test(hoveredWord.word)) {
                   // tslint:disable-next-line: radix
                   tooltip.changeContent(Rosy(parseInt(hoveredWord.word.replace(/([^0-9]+)/g,''))));
